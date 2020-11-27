@@ -1,7 +1,12 @@
 extends layout
 
 block content
+  script(type='edgeside/dynamic-yield' data-edgeside-endpoint='https://dy-api.com' data-edgeside-output='dy')
+
+
   div.ps-hero-container
+  p debug:
+  script(type='edgeside/debug' data-edgeside-input='dy')
     div.ps-hero-banner
       img.ps-hero-banner-image(src= heroBanner.image)
       div.ps-hero-banner-content
@@ -15,7 +20,7 @@ block content
     div.ps-container
       p.ps-product-recommendations-title We think you’ll like…
     div.ps-product-listing-container
-      each product in recommendations  
+      each product in recommendations
         a.ps-prodcut-listing-item(href=`/product/${product.sku}`)
           img.ps-prodcut-listing-item__image(src=product.image_url)
           p.ps-prodcut-listing-item__name= product.name
