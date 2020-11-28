@@ -1,7 +1,12 @@
 extends layout
 
 block content
-  script(type='edgeside/dynamic-yield' data-edgeside-endpoint='https://dy-api.com' data-edgeside-output='dy')
+  script(
+    type='edgeside/dynamic-yield'
+    data-edgeside-output='dy'
+    data-edgeside-selectors='HP Hero Banner,HPRecommendations'
+    data-edgeside-page-type='HOMEPAGE'
+  )
 
 
   div.ps-hero-container
