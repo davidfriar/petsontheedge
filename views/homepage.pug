@@ -11,11 +11,15 @@ block content
 
   div.ps-hero-container
     div.ps-hero-banner
-      script(type='edgeside/template' data-edgeside-input='dy') bla
-        | to do
-        | this is
-        | some text
-        | how does it render?
+      script(type='edgeside/template' data-edgeside-input='dy')
+        |{{#.['HP Hero Banner']}}
+        |<img class="ps-hero-banner-image" src="{{image}}">
+        |<div class="ps-hero-banner-content">
+        |  <p class="ps-hero-banner-title">{{title}}</p>
+        |  <p class="ps-hero-banner-subtitle">{{subtitle}}</p>
+        |  <a class="ps-cta-button" href="{{link}}" data-dy-decision-id="{{decisionId}}">Go Shopping</a>
+        |</div>
+        |{{/.['HP Hero Banner']}}
       img.ps-hero-banner-image(src= heroBanner.image)
       div.ps-hero-banner-content
         p.ps-hero-banner-title= heroBanner.title
